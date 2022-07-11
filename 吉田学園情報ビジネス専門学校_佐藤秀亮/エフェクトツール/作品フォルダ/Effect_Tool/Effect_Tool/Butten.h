@@ -147,6 +147,7 @@ public:
 		DISPLAY_PATTERN Pattern);
 
 	static void SetButten(int nPatten);	//ボタン配置
+	static void ReSetButten();	//ボタン配置リセット
 
 
 	static void AddTotal(int nTotal) { m_nButtenTotal = nTotal;}	//パターンの変更
@@ -173,7 +174,6 @@ private:
 
 	static POINT m_po;					//マウス座標
 
-	D3DXVECTOR2 m_Size;		//サイズ
 	static D3DXVECTOR2 m_Mousepos;		//マウス座標
 
 	bool m_bUninit;		//消す

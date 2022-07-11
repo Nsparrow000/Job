@@ -15,7 +15,6 @@
 // マクロ定義
 //*****************************************************************************
 #define FVF_VERTEX_2D	(D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1)
-#define MAX_TEXTURE (16)		//最大で使える2D用の画像数
 
 //*****************************************************************************
 // 構造体定義
@@ -53,8 +52,6 @@ public:
 
 	float GetHight() { return  m_Size.y; }			//pos更新するためにゲット
 	float GetWhidth() { return  m_Size.x; }			//pos更新するためにゲッ
-	void SetHight(float Hight);		//大きさ更新
-	void SetWhidth(float Whidth);	//大きさ更新
 
 	void SetTexture(int nTex) { m_nType = nTex; }		//テクスチャタイプ
 
@@ -62,34 +59,39 @@ public:
 
 	void FadeColorChange(int Alpha);		//フェード用α変更
 
-	void SetTex(int Texpos, float TexSize);						//テクスチャパターン番号、パターン１つのサイズ
-	void TexMove(float TexMoveU, float TexMoveV);				//テクスチャ座標の更新
+	void SetTexAnim(D3DXVECTOR2 TexPattern, D3DXVECTOR2 TexAnimSize);						//テクスチャパターン番号、パターン１つのサイズ
+	void TexMove(D3DXVECTOR2 MoveTex);				//テクスチャ座標の更新
 
 	void SetGaugeScele(float Whidth, float Hight);				//ゲージタイプのスケール変更
 	void SetRotate(D3DXVECTOR3 pos, float Rotate, float Rotate2, float Vectol);			//回転
+	void SetfleeSizePos(D3DXVECTOR3 pos1, D3DXVECTOR3 pos2, D3DXVECTOR3 pos3, D3DXVECTOR3 pos4);	//自由な座標指定
+	void SecondColorChange(D3DCOLORVALUE color, D3DCOLORVALUE Secondcolor);	//２点変更
 
+protected:
+	int m_nAnimCount;
+	int m_nSetAnimCnt;
+	D3DXVECTOR2 m_nSplit;
+	D3DXVECTOR2 m_MaxSplit;
+	D3DXVECTOR2 m_PatternSize;
+	D3DXVECTOR2 m_TexSize;				//テクスチャサイズ
+	D3DXVECTOR2 m_TexNum;
+	D3DXVECTOR2 m_Size;				//サイズ
 
 private:
 
 	static LPDIRECT3DTEXTURE9 m_Texture[MAX_TEXTURE];				//テクスチャーポインタ
 	static int m_nMaxTex;											//使用する最大テクスチャ
+	D3DXVECTOR3 m_pos;				//位置
 
 	LPDIRECT3DVERTEXBUFFER9 m_pVtxBuff = NULL;	//頂点バッファへのポインタ
 
-	D3DXVECTOR3 m_pos;				//位置
+	D3DXVECTOR2 m_TexMove;
 
-	D3DXVECTOR2 m_Size;				//サイズ
 
 	int m_nType;					//種類
 
 	int m_Texpos;					//テクスチャ座標
-	float m_TexSize;				//テクスチャサイズ
 
-	float m_TexMoveU;				//テクスチャ移動値
-	float m_TexMoveV;				//テクスチャ移動値
-
-	float m_PosTexU;				//テクスチャU座標
-	float m_PosTexV;				//テクスチャV座標
 
 									//カラー値
 };

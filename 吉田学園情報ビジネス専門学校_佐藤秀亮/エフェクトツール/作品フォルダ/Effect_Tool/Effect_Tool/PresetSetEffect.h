@@ -22,7 +22,6 @@ public:
 	typedef struct
 	{
 		int m_nPattern;			//動きのパターン
-		D3DXVECTOR3 m_pos;		//位置
 		float m_fRotate;		//回転
 		D3DXVECTOR3 m_Endpos;	//向かうべき位置
 		D3DXVECTOR2 m_move;		//移動量
@@ -42,6 +41,16 @@ public:
 		int Synthetic;	//合成
 		int nTexture;	//テクスチャ
 		float m_Distance;	//距離
+		D3DXVECTOR2 m_TexMove;	//テクスチャ移動
+		D3DXVECTOR2 m_TexNum;	//テクスチャ枚数
+		int m_AnimPatternType;
+		D3DXVECTOR2 m_TexSplit;	//分割数
+		int AnimCnt;	//アニメーションカウント
+		int m_nType;	//パターン
+		int m_fHigth;	//高さ
+		float m_SecondSize;
+		D3DCOLORVALUE m_SecondCol;			//2番目カラー
+		D3DCOLORVALUE m_SecondChangecolor;	//2番目カラー加算
 	} EFFECT_STATE2D;
 
 	//3Dの情報
@@ -76,7 +85,6 @@ public:
 		int Synthetic;	//合成
 		int nTexture;	//テクスチャ
 		int ParticleTime;
-		D3DXVECTOR3 pos;	//位置
 		float m_fActiveAddSize;	//アクティブ中の大きさ変更
 		int m_FieldTime;	//フィールド生成間隔
 		bool m_fieldCreate;	//フィールド生成するか
@@ -105,14 +113,13 @@ public:
 	//読み込んだエフェクトの情報を格納するやつ
 	static void SetEffectState2D(
 		int nPattern,
-		D3DXVECTOR3 pos,
 		float fRotate,
 		D3DXVECTOR2 move,
 		D3DXVECTOR2 Addmove,
 		int Diffusion,
 		int Destroyvec,
 		float fSize,
-		float m_fAddSize,
+		float fAddSize,
 		D3DCOLORVALUE col,
 		D3DCOLORVALUE Changecolor,
 		int nLife,
@@ -120,10 +127,19 @@ public:
 		bool bColorRandR,
 		bool bColorRandG,
 		bool bColorRandB,
-		bool bMousePos,
 		int Synthetic,
 		int Texture,
-		float Distance);
+		float Distance,
+		D3DXVECTOR2 m_TexMove,
+		D3DXVECTOR2 m_TexNum,
+		int m_AnimPatternType,
+		D3DXVECTOR2 m_TexSplit,
+		int AnimCnt,
+		int nType,
+		float fHigth,
+		float SecondSize,
+		D3DCOLORVALUE m_SecondCol,
+		D3DCOLORVALUE m_SecondChangecolor);
 
 	//読み込んだエフェクトの情報を格納するやつ3D
 	static void SetEffectState3D(
@@ -156,7 +172,6 @@ public:
 		int Texture,
 		int nDistance,
 		int ParticleTime,
-		D3DXVECTOR3 pos,
 		float m_fActiveAddSize,
 		int m_FieldTime,
 		bool m_fieldCreate,
@@ -200,7 +215,9 @@ public:
 
 	static CPresetEffect *CreateOrderMenu(int nDeley, int nPresetNum, int nOrder[MAX_ORDER_3D]);
 
-	static void ResetPattern() { m_nEffectPattern = 0; }
+	static void ResetPattern() { 
+		m_nEffectPattern2d = 0;
+		m_nEffectPattern3d = 0;}
 	static void ResetOrder() { m_nMaxOrderCount = 0; }
 
 	HRESULT Init(D3DXVECTOR3 pos);
@@ -214,7 +231,8 @@ private:
 	static EFFECT_STATE3D m_EffectState3D[MAX_EFFECTPATTERN_3D];
 	static ORDER_PRESET m_Order3D[MAX_ORDER_3D][MAX_ORDER_3D];
 
-	static int m_nEffectPattern;	//複数のやつ読み込めるようにするやつ
+	static int m_nEffectPattern2d;	//複数のやつ読み込めるようにするやつ
+	static int m_nEffectPattern3d;	//複数のやつ読み込めるようにするやつ
 
 	static int m_nMaxOrderCount;	//呼び出す最大数カウント
 	static int m_PrticleCreateTime;	//パーティクル生成間隔計算

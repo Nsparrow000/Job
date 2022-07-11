@@ -17,6 +17,9 @@
 
 #include "Butten.h"
 
+#include "LoadEffect.h"
+#include "PresetSetEffect.h"
+
 #endif
 
 //*****************************************************************************
@@ -27,6 +30,7 @@
 //ƒ}ƒNƒ
 //*****************************************************************************
 #define SET_TEXT_2D "data/2DSetTex.txt"
+#define LOAD_PRESET_TEXT "data/Preset.txt"
 
 #if 1
 //*****************************************************************************
@@ -54,6 +58,7 @@ HRESULT C2DScene::Init(D3DXVECTOR3 /*pos*/)
 	//m_pGamePad = CManager::GetGamepad();
 
 	m_Set = CSetEffect::Create(D3DXVECTOR3(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 0),10, 10, -1);
+	CLoadEffect::EffectStateLoad(LOAD_PRESET_TEXT);
 
 
 	CLoad::LoadButten(SET_TEXT_2D);
@@ -83,10 +88,23 @@ void C2DScene::Update()
 	{
 		if (m_pKeyboard->GetKey(DIK_RETURN) == true)
 		{
+
 			CFade::SetFade(CManager::MODE_3D);
+			CButten::ReSetButten();
+
 			CButten::ResetPatten();
 			CControl::SetPattern(0);
 		}
+
+		if (m_pKeyboard->GetKey(DIK_F2) == true)
+		{
+			for (int nCnt = 0; nCnt < CLoadEffect::GetPresetTotal2D(); nCnt++)
+			{
+
+				CPresetEffect::SetEffect2D(nCnt, D3DXVECTOR3(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 0.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), {}, {});
+			}
+		}
+
 	}
 
 }

@@ -10,7 +10,7 @@
 #define TEXTURE_FILENAME_3D "data/Tex3DNameRead.txt"
 
 //静的メンバ変数
-LPDIRECT3DTEXTURE9 CPlane::m_pTexture[MAX_TEXTURE_FILED] = {};
+LPDIRECT3DTEXTURE9 CPlane::m_pTexture[MAX_TEXTURE] = {};
 int CPlane::m_nMaxTex = 0;
 
 CPlane::CPlane(int nPriority) : CScene3D::CScene3D(nPriority)
@@ -340,6 +340,25 @@ void CPlane::TexturMove(D3DXVECTOR2 MoveTex)
 {
 	VERTEX_3D*pVtx;//頂点情報へのポインタ
 	m_TexMove += MoveTex;
+
+	if (m_TexMove.x >= 1.0f)
+	{
+		m_TexMove.x -= 1.0f;
+	}
+	else if (m_TexMove.x < 0.0f)
+	{
+		m_TexMove.x += 1.0f;
+	}
+
+	if (m_TexMove.y >= 1.0f)
+	{
+		m_TexMove.y -= 1.0f;
+	}
+	else if (m_TexMove.y < 0.0f)
+	{
+		m_TexMove.y += 1.0f;
+	}
+
 	//頂点バッファをロックし、頂点データへのポインタを取得
 	m_pVtxBuff->Lock(0, 0, (void**)&pVtx, 0);
 

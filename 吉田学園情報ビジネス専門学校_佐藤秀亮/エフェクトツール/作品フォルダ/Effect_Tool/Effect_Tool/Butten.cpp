@@ -80,8 +80,6 @@ HRESULT CButten::Init(D3DXVECTOR3 pos, float SizeX, float SizeY, int nType, OPER
 	m_bUninit = false;
 
 	CScene2D::SetTexture(nType);	//選択した番号のテクスチャを貼る
-	CScene2D::SetWhidth(m_Size.x);
-	CScene2D::SetHight(m_Size.y);
 
 	return S_OK;
 
@@ -439,5 +437,19 @@ void CButten::SetButten(int nPatten)
 			ButtenState[nPatten][nCnt].m_nIndeNum,
 			(CButten::DISPLAY)1,
 			ButtenState[nPatten][nCnt].Pattrn);
+	}
+}
+
+//*****************************************************************************
+//ボタンのリセット
+//*****************************************************************************
+void CButten::ReSetButten()
+{
+	for (int n = 0; n < MAX_BUTTENPATTERN; n++)
+	{
+		for (int n2 = 0; n2 < MAX_BUTTEN; n2++)
+		{
+			ButtenState[n][n2] = {};
+		}
 	}
 }
