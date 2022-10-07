@@ -133,7 +133,7 @@ void CButten::Update()
 				if (m_PushDeley == true)
 				{
 					m_DeleyTime++;
-					if (m_DeleyTime > 5)
+					if (m_DeleyTime > 2)
 					{
 						m_DeleyTime = 0;
 						m_fAlpha = 150.0f;
@@ -392,7 +392,12 @@ void CButten::Set(OPERATION Operation, float nIndeNum)
 	case(ANIMPATTERNTYPE):
 		CControl::AddAnimPatternType(nIndeNum);
 		break;
-
+	case(SIZEY):
+		CControl::AddSizeY(nIndeNum);
+		break;
+	case(ADDSIZEY):
+		CControl::AddChangeSizeY(nIndeNum);
+		break;
 	default:
 		assert(false);
 		break;

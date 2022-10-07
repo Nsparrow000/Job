@@ -114,7 +114,7 @@ HRESULT CRenderer::Init(HWND hWnd, bool bWindow)
 	D3DXCreateFont(m_pD3DDevice, 20, 0, 0, 0, FALSE, SHIFTJIS_CHARSET,
 		OUT_DEFAULT_PRECIS, DEFAULT_QUALITY, DEFAULT_PITCH, "Terminal", &m_pFont);		//文字の大きさ
 
-	m_pCamera = CCamera::Create(D3DXVECTOR3(0.0f, 200.0f, -300.0f), 700.0f, D3DXVECTOR3(0.0f, 0.0f, 0.0f));
+	m_pCamera = CCamera::Create(D3DXVECTOR3(0.0f, 200.0f, -300.0f), 900.0f, D3DXVECTOR3(0.0f, 0.0f, 0.0f));
 	
 
 	return S_OK;
@@ -199,7 +199,7 @@ void CRenderer::DrawFPS()
 }
 
 //*****************************************************************************
-//画面テキスト表示
+//画面テキスト表示（左）
 //*****************************************************************************
 void CRenderer::DrawText()
 {
@@ -323,8 +323,8 @@ void CRenderer::DrawText()
 			nNum += sprintf(&str[nNum], "\n");
 			if (CControl::GetPattern() != 0)
 			{
-				nNum += sprintf(&str[nNum], "サイズ [+][-]：(%.1f)\n", CControl::GetSize());
-				nNum += sprintf(&str[nNum], "サイズ増減 [+][-]：(%.1f)\n", CControl::GetChangeSize());
+				nNum += sprintf(&str[nNum], "サイズ X[+][-] Y[+][-]： X(%.1f) Y(%.1f)\n", CControl::GetSize(),CControl::GetSizeY());
+				nNum += sprintf(&str[nNum], "サイズ増減 X[+][-] Y[+][-]：X(%.1f) Y(%.1f)\n", CControl::GetChangeSize(), CControl::GetChangeSizeY());
 				nNum += sprintf(&str[nNum], "密度 [+][-]：(%d)\n", CControl::GetDensity());
 
 			}
@@ -378,6 +378,8 @@ void CRenderer::DrawText()
 				nNum += sprintf(&str[nNum], "粒合成 [+][-]：(%d)\n", CControl::GetParticleSynthetic());
 				nNum += sprintf(&str[nNum], "稼働中の大きさ変更 [+][-]：(%.1f)\n", CControl::GetAvctiveAddSize());
 
+				nNum += sprintf(&str[nNum], "フィールド寿命 [+][-]：(%d)\n", CControl::GetSecondTime());
+
 				break;
 			case(4):
 				nNum += sprintf(&str[nNum], "移動値 X[+][-]：%.1f\n", CControl::Getmove3d().x);
@@ -428,6 +430,15 @@ void CRenderer::DrawText()
 				break;
 			case(9):
 				break;
+			case(10):
+				nNum += sprintf(&str[nNum], "移動 [+][-]：%.1f\n", CControl::Getmove3d().x);
+				nNum += sprintf(&str[nNum], "上昇 [+][-]：%.1f\n", CControl::Getmove3d().y);
+				nNum += sprintf(&str[nNum], "重力 [+][-]：%.2f\n", CControl::Getmove3d().z);
+
+				nNum += sprintf(&str[nNum], "拡散率 [+][-]：(%.2f)\n", (float)CControl::GetDiffusion() / 100);
+				nNum += sprintf(&str[nNum], "上昇ランダム [+][-]：(%d)\n", CControl::GetType());
+
+				break;
 			default:
 				break;
 			}
@@ -461,7 +472,7 @@ void CRenderer::DrawText()
 }
 
 //*****************************************************************************
-//画面テキスト表示左側
+//画面テキスト表示右側
 //*****************************************************************************
 void CRenderer::DrawTextLeft()
 {

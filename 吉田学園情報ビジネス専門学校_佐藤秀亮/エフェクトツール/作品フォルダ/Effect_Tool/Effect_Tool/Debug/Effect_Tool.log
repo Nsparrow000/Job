@@ -1,43 +1,5 @@
-﻿  PresetSetEffect.cpp
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\presetseteffect.cpp(120): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\presetseteffect.cpp(277): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\presetseteffect.cpp(314): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\presetseteffect.cpp(445): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\presetseteffect.cpp(560): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\presetseteffect.cpp(560): warning C4244: '引数': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\presetseteffect.cpp(591): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\presetseteffect.cpp(631): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\presetseteffect.cpp(664): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\presetseteffect.cpp(664): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  LoadEffect.cpp
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\loadeffect.cpp(510): warning C4800: 'int': ブール値を 'true' または 'false' に強制的に設定します (警告の処理)
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\loadeffect.cpp(526): warning C4800: 'int': ブール値を 'true' または 'false' に強制的に設定します (警告の処理)
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\loadeffect.cpp(528): warning C4800: 'int': ブール値を 'true' または 'false' に強制的に設定します (警告の処理)
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\loadeffect.cpp(232): warning C4477: 'fscanf' : 書式文字列 '%f' には、型 'float *' の引数が必要ですが、可変個引数 1 は型 'D3DXVECTOR2 *' です
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\loadeffect.cpp(452): warning C4477: 'fscanf' : 書式文字列 '%f' には、型 'float *' の引数が必要ですが、可変個引数 1 は型 'D3DXVECTOR2 *' です
-  コードを生成中...
-  コンパイル中...
-  FieldEffect.cpp
-  Butten.cpp
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\butten.cpp(26): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\butten.cpp(29): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\butten.cpp(363): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\butten.cpp(372): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\butten.cpp(390): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\butten.cpp(393): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  BezierBill.cpp
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\bezierbill.cpp(98): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\bezierbill.cpp(99): warning C4244: '初期化中': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\bezierbill.cpp(190): warning C4244: '引数': 'double' から 'FLOAT' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\bezierbill.cpp(46): warning C4100: 'rot': 引数は関数の本体部で 1 度も参照されません。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\bezierbill.cpp(267): warning C4244: '引数': 'double' から 'FLOAT' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\bezierbill.cpp(431): warning C4244: '引数': 'double' から 'FLOAT' への変換です。データが失われる可能性があります。
-  3DScene.cpp
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\3dscene.cpp(137): error C2039: 'GetPresetTotal3D': 'CLoadEffect' のメンバーではありません。
-  c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\loadeffect.h(11): note: 'CLoadEffect' の宣言を確認してください
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\3dscene.cpp(137): error C3861: 'GetPresetTotal3D': 識別子が見つかりませんでした
-  2DScene.cpp
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\2dscene.cpp(101): error C2039: 'GetPresetTotal2D': 'CLoadEffect' のメンバーではありません。
-  c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\loadeffect.h(11): note: 'CLoadEffect' の宣言を確認してください
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\2dscene.cpp(101): error C3861: 'GetPresetTotal2D': 識別子が見つかりませんでした
-  コードを生成中...
+﻿  Fountain.cpp
+c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\fountain.cpp(51): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\fountain.cpp(65): warning C4552: '*': 演算子にプログラム上の作用がありません。作用を伴う演算子を使用してください
+  Effect_Tool.vcxproj -> C:\Users\student\Desktop\プログラム\ツール\BuckUp\Effect_Tool\Debug\Effect_Tool.exe
+  Effect_Tool.vcxproj -> C:\Users\student\Desktop\プログラム\ツール\BuckUp\Effect_Tool\Debug\Effect_Tool.pdb (Full PDB)
