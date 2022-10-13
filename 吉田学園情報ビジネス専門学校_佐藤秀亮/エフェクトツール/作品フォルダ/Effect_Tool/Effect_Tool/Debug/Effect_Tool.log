@@ -1,5 +1,0 @@
-﻿  Fountain.cpp
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\fountain.cpp(51): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\student\desktop\プログラム\ツール\buckup\effect_tool\effect_tool\fountain.cpp(65): warning C4552: '*': 演算子にプログラム上の作用がありません。作用を伴う演算子を使用してください
-  Effect_Tool.vcxproj -> C:\Users\student\Desktop\プログラム\ツール\BuckUp\Effect_Tool\Debug\Effect_Tool.exe
-  Effect_Tool.vcxproj -> C:\Users\student\Desktop\プログラム\ツール\BuckUp\Effect_Tool\Debug\Effect_Tool.pdb (Full PDB)
