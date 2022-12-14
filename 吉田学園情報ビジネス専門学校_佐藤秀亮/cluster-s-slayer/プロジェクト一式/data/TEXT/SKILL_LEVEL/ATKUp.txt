@@ -1,5 +1,0 @@
-SET_TEXT
-	TEXT = UŒ‚—Í‚ªƒAƒbƒv‚·‚é
-END_SETTEXT
-
-END
